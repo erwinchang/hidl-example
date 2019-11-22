@@ -1,0 +1,16 @@
+cc_binary {
+    relative_install_path: "hw",
+    defaults: ["hidl_defaults"],
+    name: "naruto_test",
+    proprietary: true,
+    srcs: ["client.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "android.hardware.naruto@1.0",
+    ],
+}
