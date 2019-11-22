@@ -5,8 +5,8 @@
 - [anlory/LedHidl][11]
 
 
-板端SabreSD i.mx6
-bsp: imx-p9.0.0_2.2.0-ga
+板端SabreSD i.mx6  
+bsp: imx-p9.0.0_2.2.0-ga  
 ```
 source build/envsetup.sh
 lunch sabresd_6dq-userdebug
@@ -88,6 +88,7 @@ android-imx-p$ mmm hardware/interfaces/naruto/1.0/default
 ## 2  產生service bin
 
 - service bin: /vendor/bin/hw/android.hardware.naruto@1.0-service
+
 ```
 naruto/1.0$ tree
 .
@@ -117,11 +118,13 @@ android-imx-p$ mmm hardware/interfaces/naruto/1.0/default
 
 ## 3 環境修改
 
-### 3-1 device/fsl/imx6dq/sabresd_6dq/manifest.xml
+### 3-1 manifest.xml
 
-The example below implements ```android.hardware.naruto@1.0::INaruto/default```
-這邊type=device表示是安裝在vendor partition
-若type=framework則是安裝在system partition
+- device/fsl/imx6dq/sabresd_6dq/manifest.xml
+- The example below implements ```android.hardware.naruto@1.0::INaruto/default```
+- 這邊type=device表示是安裝在vendor partition
+- 若type=framework則是安裝在system partition
+
 ```
 <manifest version="1.0" type="device"> 
 <hal format="hidl"> 
@@ -136,9 +139,10 @@ The example below implements ```android.hardware.naruto@1.0::INaruto/default```
 ```
 [Manifest file schema][2]
 
-### 3-2 install package
+### 3-2 sabresd_6dq.mk
 
-device/fsl/imx6dq/sabresd_6dq/sabresd_6dq.mk
+- device/fsl/imx6dq/sabresd_6dq/sabresd_6dq.mk
+
 ```
 # NARUTO HAL 
 PRODUCT_PACKAGES += \ 
